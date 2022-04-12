@@ -16,7 +16,6 @@ class ContactsList extends StatelessWidget {
       body: FutureBuilder<List<Contact>>(
         future: findAll(),
         builder: (context, snapshot) {
-          //final List<Contact> contacts = snapshot.data as List<Contact>;
           final List<Contact>? contacts = snapshot.data;
           if (contacts != null) {
             return ListView.builder(
