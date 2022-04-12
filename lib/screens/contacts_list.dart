@@ -53,10 +53,20 @@ class _ContactsListState extends State<ContactsList> {
         },
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.of(context)
-            .push(MaterialPageRoute(builder: (context) => ContactForm()))
-            .then((value) => setState(() {})),
-        child: Icon(Icons.add),
+        onPressed: () {
+          Navigator.of(context)
+              .push(
+                MaterialPageRoute(
+                  builder: (context) => ContactForm(),
+                ),
+              )
+              .then(
+                (value) => setState(() {}),
+              );
+        },
+        child: Icon(
+          Icons.add,
+        ),
       ),
     );
   }
