@@ -14,35 +14,19 @@ class ContactsList extends StatelessWidget {
         title: Text('Contacts'),
       ),
       body: FutureBuilder<List<Contact>>(
-        future: findAll(),
+        initialData: [],
+        future: Future.delayed(Duration(seconds: 1)).then((value) => findAll()),
         builder: (context, snapshot) {
-          final List<Contact>? contacts = snapshot.data;
-          if (contacts != null) {
-            return ListView.builder(
-              itemBuilder: (context, index) {
-                final Contact contact = contacts[index];
-                return _ContactItem(contact);
-              },
-              itemCount: contacts.length,
-            );
-          }
-          return Container();
+          final List<Contact> contacts = snapshot.data as List<Contact>;
+          return ListView.builder(
+            itemBuilder: (context, index) {
+              final Contact contact = contacts[index];
+              return _ContactItem(contact);
+            },
+            itemCount: contacts.length,
+          );
         },
       ),
-
-      // body: FutureBuilder(
-      //   future: findAll(),
-      //   builder: (context, snapshot) {
-      //     final List<Contact> contacts = snapshot.data;
-      //     return ListView.builder(
-      //       itemBuilder: (context, index) {
-      //         final Contact contact = contacts[index];
-      //         return _ContactItem(contact);
-      //       },
-      //       itemCount: contacts.length,
-      //     );
-      //   },),
-
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.of(context)
