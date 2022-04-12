@@ -1,9 +1,5 @@
-import 'package:bytebank/database/app_database.dart';
 import 'package:bytebank/screens/dashboard.dart';
 import 'package:flutter/material.dart';
-import 'models/contact.dart';
-import 'screens/contact_form.dart';
-import 'screens/contacts_list.dart';
 
 void main() {
   runApp(const BytebankApp());
