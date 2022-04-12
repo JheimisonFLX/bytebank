@@ -44,7 +44,7 @@ class ContactsList extends StatelessWidget {
               );
               break;
           }
-          return Text('Unkown error');
+          return Text('Unknown error');
         },
       ),
       floatingActionButton: FloatingActionButton(
